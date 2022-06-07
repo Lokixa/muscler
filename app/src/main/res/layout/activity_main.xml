@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_set_up"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="countSetUp"
+        android:text="Set+"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/set_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="107dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#4CAF50"
+        android:onClick="save"
+        android:text="Save"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toEndOf="@+id/workout_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_set_down"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="countSetDown"
+        android:text="Set-"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_count" />
+
+    <Button
+        android:id="@+id/button_rep_down"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="countRepDown"
+        android:text="Rep-"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rep_count" />
+
+    <Button
+        android:id="@+id/button_rep_down_bulk"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="countRepDownBulk"
+        android:text="Rep-5"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_rep_down" />
+
+    <Button
+        android:id="@+id/button_rep_up"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="countRepUp"
+        android:text="Rep+"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/rep_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_rep_up_bulk"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="countRepUpBulk"
+        android:text="Rep+5"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/button_rep_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/show_count2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="x"
+        android:textColor="@color/black"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+        android:id="@+id/set_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="@string/count_initial_value"
+        android:textColor="@color/black"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rep_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="@string/count_initial_value"
+        android:textColor="@color/black"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeMinTextSize="52sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/weight_number"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:hint="@string/weigth_number"
+        android:inputType="none|numberDecimal"
+        android:maxLength="5"
+        android:onClick="weightCursorReset"
+        android:textAlignment="center"
+        android:textColorHint="#78909C"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/button_rep_down_bulk"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_set_down" />
+
+    <EditText
+        android:id="@+id/workout_name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="none|text"
+        android:maxLength="20"
+        android:onClick="weightCursorReset"
+        android:textAlignment="viewStart"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="kg"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_rep_down_bulk"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toEndOf="@+id/weight_number"
+        app:layout_constraintTop_toBottomOf="@+id/show_count2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
