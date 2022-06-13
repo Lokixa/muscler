@@ -24,27 +24,60 @@
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="107dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="93dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#4CAF50"
         android:onClick="save"
         android:text="Save"
         android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.698"
         app:layout_constraintStart_toEndOf="@+id/workout_name"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_save2"
+        android:id="@+id/button_clear"
+        android:layout_width="117dp"
+        android:layout_height="72dp"
+        android:backgroundTint="#4CAF50"
+        android:onClick="clearForViews"
+        android:text="Clear"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <Button
+        android:id="@+id/button_clear2"
+        android:layout_width="97dp"
+        android:layout_height="39dp"
+        android:backgroundTint="#D12A1E"
+        android:onClick="delete"
+        android:text="Delete"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_read"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="21dp"
         android:backgroundTint="#4CAF50"
-        android:onClick="read"
-        android:text="Read"
+        android:onClick="readIntoLayout"
+        android:text="Show previous workout"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/button_set_up"
         app:layout_constraintEnd_toStartOf="@+id/button_rep_up_bulk"
@@ -52,6 +85,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/workout_name"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_previous_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CDDC39"
+        android:onClick="selectPreviousWorkout"
+        android:text="Prev."
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/selected_workout"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <Button
+        android:id="@+id/button_next_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CDDC39"
+        android:onClick="selectNextWorkout"
+        android:text="Next"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toEndOf="@+id/selected_workout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
 
     <Button
         android:id="@+id/button_set_down"
@@ -183,7 +248,7 @@
         android:layout_marginTop="20dp"
         android:cursorVisible="false"
         android:ems="10"
-        android:hint="@string/weigth_number"
+        android:hint="@string/weight_number"
         android:inputType="none|numberDecimal"
         android:maxLength="5"
         android:onClick="weightCursorReset"
@@ -198,8 +263,8 @@
 
     <EditText
         android:id="@+id/workout_name"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="249dp"
+        android:layout_height="59dp"
         android:layout_marginTop="16dp"
         android:cursorVisible="false"
         android:ems="10"
@@ -226,5 +291,18 @@
         app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toEndOf="@+id/weight_number"
         app:layout_constraintTop_toBottomOf="@+id/show_count2" />
+
+    <TextView
+        android:id="@+id/selected_workout"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/show_count2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_name"
+        app:layout_constraintVertical_bias="0.047" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
