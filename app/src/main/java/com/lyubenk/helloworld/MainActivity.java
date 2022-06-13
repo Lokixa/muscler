@@ -1,14 +1,17 @@
 package com.lyubenk.helloworld;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,8 +27,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.nio.CharBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mWeightNumber;
     private TextView mWorkoutName;
     String tag = "Debugging";
+    private boolean allClickable = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,6 +130,20 @@ public class MainActivity extends AppCompatActivity {
         editor.clear();
         editor.commit();
         Log.d(tag,"in onDestroy().");
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void read(View view){
+        Toast toast = new Toast(this);
+
+        File[] files = getFilesDir().listFiles();
+        Set<String> list = new HashSet<>();
+        for(int i =0;i<files.length;++i){
+            if(files[i].getName().contains(".json")){
+                list.add(files[i].getName());
+            }
+        }
+        toast.setText("Files found: "+ list);
+        toast.show();
     }
     public void save(View view){
         File file = new File(this.getFilesDir(), mWorkoutName.getText().toString() + ".json");

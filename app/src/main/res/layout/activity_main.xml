@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -34,6 +35,23 @@
         app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toEndOf="@+id/workout_name"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_save2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="#4CAF50"
+        android:onClick="read"
+        android:text="Read"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/button_set_up"
+        app:layout_constraintEnd_toStartOf="@+id/button_rep_up_bulk"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_name"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button_set_down"
